@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	getQuote();
+
     $('.trigger').on('click', function() {
         getQuote();
     });
@@ -15,6 +16,10 @@ $(document).ready(function() {
 
 	function createTweet(input) {
     	var data = input[0];
+        console.log(input);
+        if (!input.length) {
+            alert('Error!');
+        };
 
     	var quoteText = $(data.content).text().trim();
     	var quoteAuthor = data.title;
